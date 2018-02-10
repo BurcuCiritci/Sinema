@@ -50,6 +50,12 @@ namespace Sinema
             Int32.TryParse(txtOgr.Text, out ogr);
             Int32.TryParse(txtGozluk.Text, out gozluk);
             Int32.TryParse(txtMenu.Text, out menu);
+            while (ogr > adet)
+            {
+                MessageBox.Show("Seçilen koltuk sayısına göre öğrenci sayısı belirleyin.");
+                txtOgr.Text =" ";
+                ogr = 0;
+            }
             
             toplam = ((adet - ogr) * 20) + (ogr * 15) + (gozluk * 6) + (menu * 10);
             lblToplam.Text = toplam.ToString();
